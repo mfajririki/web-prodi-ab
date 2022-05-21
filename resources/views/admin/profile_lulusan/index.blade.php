@@ -30,17 +30,17 @@
                         </button>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
-                                <form method="post" action="/profilelululusan/import_excel" enctype="multipart/form-data">
+                                <form method="post" action="/profilelulusan/import_excel" enctype="multipart/form-data">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
                                         </div>
                                         <div class="modal-body">
-                                            <img src={{ asset("images/ContohImportProfileLulusan.png") }} class="rounded mx-auto d-block" alt="Contoh penulisan excel" width="700px">
+                                            <img src={{ asset("images/ContohImportProfileLulusan.jpg") }} class="rounded mx-auto d-block" alt="Contoh penulisan excel" width="650px">
 
                                             {{ csrf_field() }}
 
-                                            <label>Pilih file excel </label><span class="text-danger">&nbsp; *csv, xls, xlsx</span>
+                                            <label>Pilih file excel</label><span class="text-danger">&nbsp; *csv, xls, xlsx</span>
                                             <div class="form-group">
                                                 <input type="file" name="file" required="required">
                                             </div>

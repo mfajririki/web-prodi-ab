@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\KurikulumImport;
 use App\Models\Kurikulums;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
+use App\Imports\KurikulumImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
@@ -21,8 +21,9 @@ class KurikulumsController extends Controller
     public function index()
     {
         $kurikulum  = Kurikulums::latest()->get();
-
-        return view('admin.kurikulums.index', compact('kurikulum'));
+        $kurikulumSort = $kurikulum->sortBy('semester');
+        $semesterSatu = Kurikulums::where('semester', 'Semester 1')->count();
+        return view('admin.kurikulums.index', compact('kurikulum', 'semesterSatu', 'kurikulumSort'));
     }
 
     public function create()
